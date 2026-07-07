@@ -375,14 +375,24 @@
 
   /* ───────────────── Approach numbered list ───────────────── */
   .approach{background:#fff}
-  .ap-list{display:flex;flex-direction:column}
-  .ap-row{display:grid;grid-template-columns:120px 1fr 1fr;gap:32px;padding:32px 0;border-top:1px solid var(--cloud-30);align-items:start}
+  .ap-list{display:flex;flex-direction:column;position:relative;padding-left:32px}
+  .ap-track{position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--cloud-30)}
+  .ap-track-fill{position:absolute;left:9px;top:4px;width:2px;background:var(--mint);height:0%;z-index:1;transition:height .1s linear}
+  .ap-row{position:relative;display:grid;grid-template-columns:120px 1fr 1fr;gap:32px;padding:32px 24px;margin:0 -24px;border-top:1px solid var(--cloud-30);align-items:start;border-radius:var(--r-md);transition:background .25s ease, box-shadow .25s ease, border-left-color .25s ease;border-left:3px solid transparent}
   .ap-row:last-child{border-bottom:1px solid var(--cloud-30)}
-  .ap-row .step{font-family:var(--ff-mono);font-size:13px;color:var(--mint);letter-spacing:.1em}
+  .ap-row:hover{background:var(--snow)}
+  .ap-row.active{border-left-color:var(--mint);background:var(--mint-soft)}
+  .ap-dot{position:absolute;left:-23px;top:38px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--cloud-30);z-index:2;cursor:pointer;transition:border-color .3s ease,background .3s ease,box-shadow .3s ease,transform .2s ease}
+  .ap-dot:hover{transform:scale(1.25)}
+  .ap-dot.active{border-color:var(--mint);background:var(--mint);box-shadow:0 0 0 4px rgba(110,191,171,.18)}
+  .ap-row .step{font-family:var(--ff-mono);font-size:13px;color:var(--mint);letter-spacing:.1em;transition:font-weight .2s ease}
+  .ap-row.active .step{font-weight:700}
   .ap-row h3{font-family:var(--ff-th);font-weight:600;font-size:22px;color:var(--navy);line-height:1.3}
   .ap-row .ap-desc{color:var(--navy-70);font-size:15px;line-height:1.65}
   .ap-row .ap-time{font-family:var(--ff-mono);font-size:12px;color:var(--mist);letter-spacing:.08em;text-transform:uppercase;margin-top:8px}
-  @media(max-width:760px){.ap-row{grid-template-columns:1fr;gap:14px}}
+  .ap-progress{font-family:var(--ff-mono);font-size:12px;color:var(--mist);letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px}
+  .ap-progress b{color:var(--mint);font-weight:600}
+  @media(max-width:760px){.ap-row{grid-template-columns:1fr;gap:14px;padding:26px 18px;margin:0 -18px}}
 
   /* ───────────────── Case study / dark feature ───────────────── */
   .case{
@@ -804,8 +814,12 @@
       <p class="desc">ไม่ต้องเตรียมเอกสารยุ่งยาก เราเข้าไปอ่านระบบที่คุณมี แล้วออกแบบ workflow ใหม่ให้ตรงกับธุรกิจ</p>
     </div>
 
+    <div class="ap-progress mono" id="ap-progress">STEP <b id="ap-progress-n">1</b> / 4</div>
     <div class="ap-list">
-      <div class="ap-row">
+      <div class="ap-track"></div>
+      <div class="ap-track-fill" id="ap-track-fill"></div>
+      <div class="ap-row" data-step="1">
+        <span class="ap-dot" data-step="1"></span>
         <div class="step">STEP 01</div>
         <h3>Health Check &amp; Discovery</h3>
         <div>
@@ -813,7 +827,8 @@
           <div class="ap-time">วันที่ 1 · 30 นาที</div>
         </div>
       </div>
-      <div class="ap-row">
+      <div class="ap-row" data-step="2">
+        <span class="ap-dot" data-step="2"></span>
         <div class="step">STEP 02</div>
         <h3>Proposal &amp; Scope</h3>
         <div>
@@ -821,7 +836,8 @@
           <div class="ap-time">วันที่ 2–4 · ภายใน 72 ชม.</div>
         </div>
       </div>
-      <div class="ap-row">
+      <div class="ap-row" data-step="3">
+        <span class="ap-dot" data-step="3"></span>
         <div class="step">STEP 03</div>
         <h3>Onboarding &amp; Setup</h3>
         <div>
@@ -829,7 +845,8 @@
           <div class="ap-time">วันที่ 5–10 · 5 วันทำการ</div>
         </div>
       </div>
-      <div class="ap-row">
+      <div class="ap-row" data-step="4">
+        <span class="ap-dot" data-step="4"></span>
         <div class="step">STEP 04</div>
         <h3>Operate &amp; Advise</h3>
         <div>
@@ -1020,6 +1037,43 @@
   if(!CSS.supports('backdrop-filter','blur(2px)')){
     document.querySelector('.nav').style.background = '#fff';
   }
+
+  // Approach timeline: scroll-driven fill, active card highlight, live step counter, click-to-scroll
+  (function(){
+    const list = document.querySelector('.ap-list');
+    const fill = document.getElementById('ap-track-fill');
+    const dots = document.querySelectorAll('.ap-dot');
+    const rows = document.querySelectorAll('.ap-row');
+    const progressN = document.getElementById('ap-progress-n');
+    if(!list || !fill) return;
+    let ticking = false;
+    function update(){
+      const rect = list.getBoundingClientRect();
+      const trigger = window.innerHeight * 0.75;
+      const progress = Math.max(0, Math.min(1, (trigger - rect.top) / rect.height));
+      fill.style.height = (progress * 100) + '%';
+      let currentStep = 1;
+      rows.forEach((row) => {
+        const isActive = row.getBoundingClientRect().top < trigger;
+        row.classList.toggle('active', isActive);
+        const dot = document.querySelector(`.ap-dot[data-step="${row.dataset.step}"]`);
+        if(dot) dot.classList.toggle('active', isActive);
+        if(isActive) currentStep = Math.max(currentStep, Number(row.dataset.step));
+      });
+      if(progressN) progressN.textContent = currentStep;
+      ticking = false;
+    }
+    function onScroll(){ if(!ticking){ requestAnimationFrame(update); ticking = true; } }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const row = document.querySelector(`.ap-row[data-step="${dot.dataset.step}"]`);
+        if(row) row.scrollIntoView({behavior:'smooth', block:'center'});
+      });
+    });
+    update();
+  })();
 </script>
 </body>
 </html>
