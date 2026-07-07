@@ -40,6 +40,9 @@
   "telephone": "+66952249795",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "เลขที่ 1 อาคารเอ็มไพร์ ทาวเวอร์ ชั้น 47 ยูนิต 4703 ถนนสาทรใต้ แขวงยานนาวา เขตสาทร",
+    "addressLocality": "กรุงเทพมหานคร",
+    "postalCode": "10120",
     "addressCountry": "TH"
   }
 }
@@ -291,7 +294,7 @@
 
   /* Full-bleed photo hero */
   .hero.hero-photo-mode{background:var(--navy);padding:140px 0 120px}
-  .hero-photo-mode .hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 32%}
+  .hero-photo-mode .hero-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center 32%}
   .hero-photo-mode .hero-scrim{position:absolute;inset:0;z-index:1;
     background:
       linear-gradient(105deg, rgba(9,16,33,.94) 0%, rgba(9,16,33,.74) 36%, rgba(9,16,33,.42) 62%, rgba(9,16,33,.58) 100%),
@@ -346,7 +349,7 @@
 
   /* ───────────────── Philosophy / pillars ───────────────── */
   .philo{background:var(--snow);position:relative;overflow:hidden}
-  .philo-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 30%}
+  .philo-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
   .philo-scrim{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg, rgba(244,245,247,.93) 0%, rgba(244,245,247,.88) 55%, rgba(244,245,247,.95) 100%)}
   .philo > .container{position:relative;z-index:1}
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
@@ -415,8 +418,9 @@
     transition:transform .2s ease, box-shadow .2s ease;
   }
   .ins:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
-  .ins-cover{aspect-ratio:4/3;position:relative;overflow:hidden;background-size:cover;background-position:center}
-  .ins-cover .ins-scrim{position:absolute;inset:0;
+  .ins-cover{aspect-ratio:4/3;position:relative;overflow:hidden}
+  .ins-cover .ins-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover}
+  .ins-cover .ins-scrim{position:absolute;inset:0;z-index:1;
     background:linear-gradient(to top, rgba(9,16,33,.62) 0%, rgba(9,16,33,.06) 40%, rgba(9,16,33,0) 58%);
   }
   .ins-cover .small-tag{
@@ -643,7 +647,7 @@
 
 <!-- ───────────────── HERO ───────────────── -->
 <section class="hero hero-photo-mode" id="top">
-  <div class="hero-bg" style="background-image:url(assets/hero-dashboard.webp)"></div>
+  <img class="hero-bg" src="assets/hero-dashboard.webp" alt="แล็ปท็อปแสดงแดชบอร์ดการเงิน พร้อมเครื่องคิดเลขและเอกสารรายงานการเงินบนโต๊ะทำงาน" />
   <div class="hero-scrim"></div>
   <div class="grid-bg on-dark"></div>
   <div class="container hero-inner">
@@ -745,7 +749,7 @@
 
 <!-- ───────────────── PHILOSOPHY ───────────────── -->
 <section class="sec philo" id="philosophy">
-  <div class="philo-bg" style="background-image:url(assets/philo-office-corridor.webp)"></div>
+  <img class="philo-bg" src="assets/philo-office-corridor.webp" alt="ทางเดินสำนักงานทันสมัย กระจกใส ต้นไม้ประดับ และแผงผนังสีกรมท่า" />
   <div class="philo-scrim"></div>
   <div class="grid-bg subtle"></div>
   <div class="container" style="position:relative">
@@ -850,7 +854,8 @@
 
     <div class="ins-grid">
       <a class="ins" href="articles/audit-prep-checklist.html">
-        <div class="ins-cover c1" style="background-image:url(assets/insight-audit-prep.webp)">
+        <div class="ins-cover c1">
+          <img class="ins-photo" src="assets/insight-audit-prep.webp" alt="มือถือปากกากำลังติ๊กเช็คลิสต์ตรวจสอบบัญชีบนคลิปบอร์ด" />
           <div class="ins-scrim"></div>
           <div class="small-tag">Audit Prep</div>
         </div>
@@ -862,7 +867,8 @@
       </a>
 
       <a class="ins" href="articles/cash-flow-signals.html">
-        <div class="ins-cover c2" style="background-image:url(assets/insight-cashflow.webp)">
+        <div class="ins-cover c2">
+          <img class="ins-photo" src="assets/insight-cashflow.webp" alt="จอมอนิเตอร์แสดงกราฟแนวโน้ม Cash Flow ขาลง พร้อมสัญลักษณ์เตือน" />
           <div class="ins-scrim"></div>
           <div class="small-tag">Signals</div>
         </div>
@@ -874,7 +880,8 @@
       </a>
 
       <a class="ins" href="articles/choosing-accounting-firm.html">
-        <div class="ins-cover c3" style="background-image:url(assets/insight-choosing-firm.webp)">
+        <div class="ins-cover c3">
+          <img class="ins-photo" src="assets/insight-choosing-firm.webp" alt="ที่ปรึกษาและเจ้าของธุรกิจกำลังพูดคุยทบทวนเอกสารร่วมกัน" />
           <div class="ins-scrim"></div>
           <div class="small-tag">Guide</div>
         </div>
