@@ -346,6 +346,9 @@
 
   /* ───────────────── Philosophy / pillars ───────────────── */
   .philo{background:var(--snow);position:relative;overflow:hidden}
+  .philo-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 30%}
+  .philo-scrim{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg, rgba(244,245,247,.93) 0%, rgba(244,245,247,.88) 55%, rgba(244,245,247,.95) 100%)}
+  .philo > .container{position:relative;z-index:1}
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
   @media(max-width:840px){.pillars{grid-template-columns:1fr}}
   .pillar{
@@ -742,6 +745,8 @@
 
 <!-- ───────────────── PHILOSOPHY ───────────────── -->
 <section class="sec philo" id="philosophy">
+  <div class="philo-bg" style="background-image:url(assets/philo-office-corridor.webp)"></div>
+  <div class="philo-scrim"></div>
   <div class="grid-bg subtle"></div>
   <div class="container" style="position:relative">
     <div class="sec-head">
