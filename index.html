@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Numerics Advisory — สำนักงานบัญชี &amp; ที่ปรึกษาธุรกิจ | Beyond Numbers</title>
+<meta name="description" content="Numerics Advisory — สำนักงานบัญชีและที่ปรึกษาธุรกิจที่เข้าใจ SME ไทย บริการบัญชี ภาษี ตรวจสอบ วางแผนการเงิน และที่ปรึกษาเชิงกลยุทธ์ พร้อมนัด Health Check ฟรี 30 นาที" />
+<meta name="keywords" content="สำนักงานบัญชี, ที่ปรึกษาบัญชี, บริการบัญชี SME, วางแผนภาษี, ตรวจสอบบัญชี, Numerics Advisory, accounting firm Thailand" />
+<meta name="author" content="Numerics Advisory" />
+<link rel="canonical" href="https://numericsadvisory.com/" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/numerics-logo.png" />
+<link rel="apple-touch-icon" href="assets/numerics-logo.png" />
+
+<!-- Open Graph / Facebook / Line -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://numericsadvisory.com/" />
+<meta property="og:title" content="Numerics Advisory — Beyond Numbers" />
+<meta property="og:description" content="สำนักงานบัญชีและที่ปรึกษาธุรกิจที่เข้าใจ SME ไทย ตัวเลขที่เข้าใจธุรกิจคุณ" />
+<meta property="og:image" content="https://numericsadvisory.com/assets/numerics-logo.png" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:site_name" content="Numerics Advisory" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Numerics Advisory — Beyond Numbers" />
+<meta name="twitter:description" content="สำนักงานบัญชีและที่ปรึกษาธุรกิจที่เข้าใจ SME ไทย" />
+<meta name="twitter:image" content="https://numericsadvisory.com/assets/numerics-logo.png" />
+
+<!-- JSON-LD Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Numerics Advisory",
+  "url": "https://numericsadvisory.com",
+  "logo": "https://numericsadvisory.com/assets/numerics-logo.png",
+  "email": "achiraya@numericsadvisory.com",
+  "telephone": "+66952249795",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "TH"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,800&family=DM+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  /* ───────────────── Tokens ───────────────── */
+  :root{
+    --navy:#1B2A4A;
+    --navy-90:#243454;
+    --navy-70:rgba(27,42,74,.70);
+    --navy-50:rgba(27,42,74,.50);
+    --mint:#6EBFAB;
+    --mint-soft:#E6F2EE;
+    --white:#FFFFFF;
+    --snow:#F4F5F7;
+    --cloud:#C4C9D8;
+    --cloud-30:rgba(196,201,216,.30);
+    --mist:#8B92A8;
+    --amber:#F0B754;
+
+    --ff-en:'DM Sans','IBM Plex Sans Thai',ui-sans-serif,system-ui,sans-serif;
+    --ff-th:'IBM Plex Sans Thai','DM Sans',ui-sans-serif,system-ui,sans-serif;
+    --ff-mono:'DM Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+
+    --r-sm:8px; --r-md:12px; --r-lg:18px; --r-xl:24px;
+
+    --shadow-card:0 1px 0 rgba(27,42,74,.04), 0 12px 32px -16px rgba(27,42,74,.18);
+    --shadow-hover:0 2px 0 rgba(27,42,74,.04), 0 22px 48px -20px rgba(27,42,74,.28);
+
+    --container:1240px;
+    --gap:24px;
+  }
+
+  /* ───────────────── Reset / base ───────────────── */
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--ff-th);
+    color:var(--navy);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-size:16px;
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+  .container{max-width:var(--container);margin:0 auto;padding:0 32px}
+  @media(max-width:720px){.container{padding:0 20px}}
+
+  /* ───────────────── Type system ───────────────── */
+  .en{font-family:var(--ff-en);letter-spacing:-0.01em}
+  .mono{font-family:var(--ff-mono);font-feature-settings:"tnum" 1, "lnum" 1}
+  .eyebrow{
+    font-family:var(--ff-mono);
+    font-size:11px;font-weight:500;
+    letter-spacing:.18em;text-transform:uppercase;
+    color:var(--mist);
+  }
+  .eyebrow .dot{display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:var(--mint);margin-right:10px;vertical-align:2px}
+
+  h1,h2,h3,h4{margin:0;color:var(--navy);font-weight:600;line-height:1.15;text-wrap:balance}
+  .h-display{
+    font-family:var(--ff-en);
+    font-weight:700;
+    font-size:clamp(44px,6.4vw,84px);
+    letter-spacing:-0.025em;
+    line-height:1.02;
+  }
+  .h-display .th{font-family:var(--ff-th);font-weight:600;line-height:1.08}
+  .h1{font-family:var(--ff-en);font-weight:700;font-size:clamp(34px,4.4vw,56px);letter-spacing:-0.02em;line-height:1.08}
+  .h1.th{font-family:var(--ff-th);font-weight:600}
+  .h2{font-family:var(--ff-th);font-weight:600;font-size:clamp(26px,2.6vw,36px);line-height:1.2}
+  .h3{font-family:var(--ff-th);font-weight:600;font-size:20px;line-height:1.35}
+
+  .lede{font-size:18px;line-height:1.55;color:var(--navy-70);max-width:62ch;text-wrap:pretty}
+  p{margin:0 0 12px;text-wrap:pretty}
+  p:last-child{margin-bottom:0}
+
+  .muted{color:var(--mist)}
+  .accent{color:var(--mint)}
+
+  .rule{height:1px;background:var(--cloud-30);border:0;margin:0}
+  .mint-bar{display:inline-block;width:48px;height:3px;background:var(--mint);border-radius:2px}
+  .mint-rule{display:block;width:100%;height:1px;background:linear-gradient(to right,var(--mint) 0,var(--mint) 48px,var(--cloud-30) 48px,var(--cloud-30) 100%)}
+
+  /* Grid pattern */
+  .grid-bg{
+    position:absolute;inset:0;pointer-events:none;
+    background-image:
+      linear-gradient(to right, rgba(27,42,74,.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27,42,74,.06) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+  .grid-bg.subtle{
+    background-image:
+      linear-gradient(to right, rgba(27,42,74,.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27,42,74,.04) 1px, transparent 1px);
+  }
+  .grid-bg.on-dark{
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+    mask-image:radial-gradient(ellipse at top right, #000 0%, transparent 60%);
+    -webkit-mask-image:radial-gradient(ellipse at top right, #000 0%, transparent 60%);
+  }
+
+  /* ───────────────── Buttons ───────────────── */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 22px;border-radius:999px;
+    font-family:var(--ff-th);font-weight:500;font-size:15px;
+    transition:transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    white-space:nowrap;
+  }
+  .btn .arr{display:inline-block;transition:transform .2s ease}
+  .btn:hover .arr{transform:translateX(3px)}
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:#0F1B36}
+  .btn-mint{background:var(--mint);color:var(--navy)}
+  .btn-mint:hover{background:#5CB29D}
+  .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--cloud)}
+  .btn-ghost:hover{border-color:var(--navy);background:#fff}
+  .btn-ghost.on-dark{color:#fff;border-color:rgba(255,255,255,.25)}
+  .btn-ghost.on-dark:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+  .btn-sm{padding:10px 16px;font-size:14px}
+
+  /* ───────────────── Logo ───────────────── */
+  .logo{display:inline-flex;align-items:center;gap:10px}
+  .logo .logo-img{height:34px;width:auto;display:block}
+  .logo.reversed .logo-img{height:34px;filter:brightness(0) invert(1)}
+  /* legacy SVG mark styles (kept if any old markup uses it) */
+  .logo .mark{
+    width:28px;height:28px;border-radius:7px;
+    background:var(--navy);position:relative;flex:none;
+    display:grid;place-items:center;
+  }
+  .logo .mark svg{width:18px;height:18px}
+  .logo .wm{
+    font-family:var(--ff-en);font-weight:700;font-size:20px;letter-spacing:-0.02em;
+    color:var(--navy);
+  }
+  .logo .wm em{font-style:normal;color:var(--mint)}
+  .logo.reversed .wm{color:#fff}
+  .logo.reversed .mark{background:var(--mint)}
+  .logo.reversed .mark svg path{stroke:var(--navy)}
+
+  /* ───────────────── NAV ───────────────── */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(160%) blur(14px);
+    -webkit-backdrop-filter:saturate(160%) blur(14px);
+    background:rgba(255,255,255,.78);
+    border-bottom:1px solid var(--cloud-30);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{font-size:14px;color:var(--navy-70);transition:color .2s}
+  .nav-links a:hover{color:var(--navy)}
+  .nav-links a.active{color:var(--navy);font-weight:500}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .nav-lang{font-family:var(--ff-mono);font-size:12px;color:var(--mist);letter-spacing:.08em}
+  .nav-lang b{color:var(--navy)}
+  @media(max-width:860px){
+    .nav-links{display:none}
+  }
+
+  /* ───────────────── HERO ───────────────── */
+  .hero{
+    position:relative;overflow:hidden;
+    background:var(--snow);
+    padding:96px 0 120px;
+  }
+  .hero-inner{position:relative;max-width:980px;margin:0 auto}
+
+  .hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+  .hero-title{margin-bottom:32px}
+  .hero-title .line2{display:block;color:var(--mint);font-weight:700}
+  .hero-title .th-supp{display:block;margin-top:18px;font-size:clamp(20px,2.2vw,30px);font-weight:500;color:var(--navy-70);font-family:var(--ff-th);letter-spacing:0;line-height:1.4;max-width:26ch}
+
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;align-items:center}
+  .hero-creds{display:flex;flex-wrap:wrap;gap:28px 36px;margin-top:48px;padding-top:32px;border-top:1px solid var(--cloud-30)}
+  .hero-creds .cred{display:flex;align-items:center;gap:12px}
+  .hero-creds .cred-tick{width:24px;height:24px;border-radius:50%;background:var(--mint-soft);color:var(--mint);display:grid;place-items:center;font-size:12px;font-weight:600;flex:none}
+  .hero-creds .cred-t{font-family:var(--ff-th);font-weight:600;font-size:14px;color:var(--navy);line-height:1.2}
+  .hero-creds .cred-d{font-family:var(--ff-mono);font-size:11px;color:var(--mist);letter-spacing:.04em;margin-top:2px}
+
+  /* Hero card / dashboard placeholder */
+  .hero-card{
+    position:relative;background:#fff;border:1px solid var(--cloud-30);
+    border-radius:var(--r-xl);box-shadow:var(--shadow-card);
+    padding:24px;overflow:hidden;
+  }
+  .hero-card::before{
+    content:"";position:absolute;top:-80px;right:-80px;width:240px;height:240px;
+    background:radial-gradient(circle at center, rgba(110,191,171,.25), transparent 70%);
+    pointer-events:none;
+  }
+  .hc-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .hc-tag{
+    font-family:var(--ff-mono);font-size:11px;color:var(--mist);
+    letter-spacing:.12em;text-transform:uppercase;
+  }
+  .hc-status{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-mono);font-size:11px;color:var(--mint);letter-spacing:.1em;text-transform:uppercase}
+  .hc-status .pulse{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(110,191,171,.18);animation:pulse 1.6s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(110,191,171,.4)}100%{box-shadow:0 0 0 10px rgba(110,191,171,0)}}
+
+  .hc-headline{font-family:var(--ff-th);font-weight:500;color:var(--navy);font-size:14px;margin-bottom:4px}
+  .hc-big{font-family:var(--ff-mono);font-weight:500;font-size:44px;color:var(--navy);letter-spacing:-.02em;display:flex;align-items:baseline;gap:8px}
+  .hc-big .delta{font-size:14px;color:var(--mint);background:var(--mint-soft);padding:3px 8px;border-radius:6px}
+  .hc-sub{font-size:12px;color:var(--mist);margin-bottom:18px;font-family:var(--ff-mono)}
+
+  .hc-chart{position:relative;height:130px;margin:6px 0 18px}
+  .hc-legend{display:flex;gap:18px;margin-bottom:14px}
+  .hc-legend > div{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--mist);font-family:var(--ff-mono)}
+  .hc-legend .sw{width:10px;height:3px;border-radius:2px}
+
+  .hc-rows{display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid var(--cloud-30)}
+  .hc-r{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+  .hc-r .lbl{color:var(--navy-70)}
+  .hc-r .val{font-family:var(--ff-mono);color:var(--navy);font-weight:500}
+  .hc-r .val.up{color:var(--mint)}
+  .hc-r .val.warn{color:var(--amber)}
+
+  /* Hero stat badges that float */
+  .hero-badge{
+    position:absolute;background:#fff;border:1px solid var(--cloud-30);
+    border-radius:14px;padding:12px 14px;box-shadow:var(--shadow-card);
+    display:flex;align-items:center;gap:10px;
+  }
+  .hero-badge .bdg-i{width:32px;height:32px;border-radius:9px;background:var(--mint-soft);color:var(--mint);
+    display:grid;place-items:center;font-family:var(--ff-mono);font-weight:500;font-size:14px;flex:none}
+  .hero-badge .bdg-t{font-size:12px;color:var(--mist);font-family:var(--ff-mono);letter-spacing:.06em;text-transform:uppercase}
+  .hero-badge .bdg-v{font-size:14px;color:var(--navy);font-weight:500;font-family:var(--ff-th)}
+  .hero-badge.b1{top:-18px;left:-22px}
+  .hero-badge.b2{bottom:-22px;right:-18px}
+  @media(max-width:960px){.hero-badge{display:none}}
+
+  /* Full-bleed photo hero */
+  .hero.hero-photo-mode{background:var(--navy);padding:140px 0 120px}
+  .hero-photo-mode .hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 32%}
+  .hero-photo-mode .hero-scrim{position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(105deg, rgba(9,16,33,.94) 0%, rgba(9,16,33,.74) 36%, rgba(9,16,33,.42) 62%, rgba(9,16,33,.58) 100%),
+      linear-gradient(to top, rgba(9,16,33,.85) 0%, rgba(9,16,33,.1) 42%, rgba(9,16,33,0) 68%);
+  }
+  .hero-photo-mode .grid-bg{z-index:1;opacity:.35}
+  .hero-photo-mode .hero-inner{position:relative;z-index:2;max-width:820px;margin:0}
+  .hero-photo-mode .eyebrow{color:rgba(255,255,255,.7)}
+  .hero-photo-mode .hero-title{color:#fff}
+  .hero-photo-mode .hero-title .th-supp{color:rgba(255,255,255,.82)}
+  .hero-photo-mode .lede{color:rgba(255,255,255,.86)}
+  .hero-photo-mode .lede b{color:var(--mint) !important}
+  .hero-photo-mode .hero-creds{border-top-color:rgba(255,255,255,.2)}
+  .hero-photo-mode .cred-t{color:#fff}
+  .hero-photo-mode .cred-d{color:rgba(255,255,255,.6)}
+  @media(max-width:640px){.hero.hero-photo-mode{padding:88px 0 56px}}
+
+  /* ───────────────── Logos / trust strip ───────────────── */
+  .trust{padding:34px 0;border-top:1px solid var(--cloud-30);border-bottom:1px solid var(--cloud-30);background:#fff}
+  .trust-inner{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:space-between}
+  .trust-lbl{font-family:var(--ff-mono);font-size:11px;color:var(--mist);letter-spacing:.14em;text-transform:uppercase;flex:none}
+  .trust-logos{display:flex;gap:42px;flex-wrap:wrap;align-items:center}
+  .trust-logos .tl{font-family:var(--ff-en);color:var(--cloud);font-weight:500;font-size:18px;letter-spacing:-.01em}
+
+  /* ───────────────── Section ───────────────── */
+  section{position:relative}
+  .sec{padding:120px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-bottom:64px}
+  .sec-head .left{max-width:680px}
+  .sec-head .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .sec-head h2{margin-bottom:18px}
+  .sec-head .desc{color:var(--navy-70);font-size:16px;line-height:1.6;max-width:54ch}
+  @media(max-width:760px){.sec-head{flex-direction:column;align-items:flex-start}}
+
+  /* ───────────────── Services ───────────────── */
+  .services{background:var(--white)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cloud-30);border:1px solid var(--cloud-30);border-radius:var(--r-lg);overflow:hidden}
+  @media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+  .svc{background:#fff;padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:background .2s;min-height:280px;position:relative}
+  .svc:hover{background:var(--snow)}
+  .svc .num{
+    font-family:var(--ff-mono);font-size:12px;color:var(--mint);letter-spacing:.06em;
+    display:flex;align-items:center;gap:10px;
+  }
+  .svc .num::after{content:"";flex:1;height:1px;background:var(--cloud-30);max-width:120px}
+  .svc h3{margin-top:6px}
+  .svc .desc{color:var(--mist);font-size:14px;line-height:1.6;flex:1}
+  .svc .more{font-family:var(--ff-mono);font-size:12px;color:var(--navy);letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;margin-top:8px}
+  .svc .more::after{content:"→";transition:transform .2s}
+  .svc:hover .more::after{transform:translateX(3px)}
+
+  /* ───────────────── Philosophy / pillars ───────────────── */
+  .philo{background:var(--snow);position:relative;overflow:hidden}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  @media(max-width:840px){.pillars{grid-template-columns:1fr}}
+  .pillar{
+    background:#fff;border:1px solid var(--cloud-30);border-radius:var(--r-lg);
+    padding:36px;display:flex;flex-direction:column;gap:18px;
+    position:relative;overflow:hidden;
+  }
+  .pillar .num-glow{
+    position:absolute;top:-30px;right:-30px;width:140px;height:140px;
+    border-radius:50%;background:radial-gradient(circle, rgba(110,191,171,.18),transparent 70%);
+    pointer-events:none;
+  }
+  .pillar .icon-wrap{
+    width:52px;height:52px;border-radius:14px;background:var(--mint-soft);
+    display:grid;place-items:center;color:var(--mint);
+  }
+  .pillar .icon-wrap svg{width:24px;height:24px}
+  .pillar h3{font-size:22px;margin-bottom:0}
+  .pillar p{color:var(--navy-70);font-size:15px;line-height:1.7;margin:0}
+  .pillar .tag{font-family:var(--ff-mono);font-size:11px;color:var(--mint);letter-spacing:.14em;text-transform:uppercase}
+
+  /* ───────────────── Approach numbered list ───────────────── */
+  .approach{background:#fff}
+  .ap-list{display:flex;flex-direction:column}
+  .ap-row{display:grid;grid-template-columns:120px 1fr 1fr;gap:32px;padding:32px 0;border-top:1px solid var(--cloud-30);align-items:start}
+  .ap-row:last-child{border-bottom:1px solid var(--cloud-30)}
+  .ap-row .step{font-family:var(--ff-mono);font-size:13px;color:var(--mint);letter-spacing:.1em}
+  .ap-row h3{font-family:var(--ff-th);font-weight:600;font-size:22px;color:var(--navy);line-height:1.3}
+  .ap-row .ap-desc{color:var(--navy-70);font-size:15px;line-height:1.65}
+  .ap-row .ap-time{font-family:var(--ff-mono);font-size:12px;color:var(--mist);letter-spacing:.08em;text-transform:uppercase;margin-top:8px}
+  @media(max-width:760px){.ap-row{grid-template-columns:1fr;gap:14px}}
+
+  /* ───────────────── Case study / dark feature ───────────────── */
+  .case{
+    position:relative;background:var(--navy);color:#fff;overflow:hidden;
+    padding:120px 0;
+  }
+  .case .grid-bg.on-dark{opacity:.6}
+  .case-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  @media(max-width:900px){.case-inner{grid-template-columns:1fr;gap:48px}}
+  .case .eyebrow{color:var(--mint)}
+  .case h2{color:#fff;font-size:clamp(30px,3.4vw,46px);line-height:1.18;margin:18px 0 24px;font-weight:600}
+  .case .quote{color:rgba(255,255,255,.78);font-size:17px;line-height:1.7;max-width:54ch;margin-bottom:32px}
+  .case .who{display:flex;align-items:center;gap:14px}
+  .case .who .av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#3a4d77 0%,#1B2A4A 100%);border:1px solid rgba(255,255,255,.15);display:grid;place-items:center;font-family:var(--ff-en);font-weight:500;color:#fff;font-size:16px}
+  .case .who .name{font-weight:500}
+  .case .who .role{font-size:13px;color:rgba(255,255,255,.55);font-family:var(--ff-mono);letter-spacing:.04em}
+
+  .case-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);overflow:hidden}
+  .case-stat{background:rgba(255,255,255,.03);padding:32px;display:flex;flex-direction:column;gap:8px}
+  .case-stat .lbl{font-family:var(--ff-mono);font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.14em;text-transform:uppercase}
+  .case-stat .val{font-family:var(--ff-mono);font-size:44px;color:var(--mint);font-weight:500;letter-spacing:-.02em;line-height:1}
+  .case-stat .val .unit{font-size:18px;color:rgba(255,255,255,.55);margin-left:2px}
+  .case-stat .desc{font-size:13px;color:rgba(255,255,255,.65);line-height:1.5;margin-top:6px;font-family:var(--ff-th)}
+
+  /* ───────────────── Insights ───────────────── */
+  .insights{background:#fff}
+  .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:900px){.ins-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.ins-grid{grid-template-columns:1fr}}
+  .ins{
+    background:#fff;border:1px solid var(--cloud-30);border-radius:var(--r-lg);
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .ins:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+  .ins-cover{aspect-ratio:4/3;position:relative;overflow:hidden;background-size:cover;background-position:center}
+  .ins-cover .ins-scrim{position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(9,16,33,.62) 0%, rgba(9,16,33,.06) 40%, rgba(9,16,33,0) 58%);
+  }
+  .ins-cover .small-tag{
+    position:absolute;right:14px;top:14px;z-index:1;
+    background:rgba(9,16,33,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+    color:#fff;padding:5px 10px;border-radius:999px;
+    font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  }
+
+  .ins-body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .ins-tag{font-family:var(--ff-mono);font-size:11px;color:var(--mint);letter-spacing:.12em;text-transform:uppercase}
+  .ins-title{font-family:var(--ff-th);font-weight:600;font-size:18px;color:var(--navy);line-height:1.35}
+  .ins-meta{margin-top:auto;font-family:var(--ff-mono);font-size:11px;color:var(--mist);letter-spacing:.04em;display:flex;justify-content:space-between;padding-top:12px;border-top:1px solid var(--cloud-30)}
+
+  /* ───────────────── Founder ───────────────── */
+  .founder{background:var(--snow);position:relative;overflow:hidden}
+  .fdr-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+  @media(max-width:900px){.fdr-inner{grid-template-columns:1fr;gap:40px}}
+  .fdr-quotecard{
+    aspect-ratio:4/5;
+    background:var(--navy);color:#fff;
+    border-radius:var(--r-lg);position:relative;overflow:hidden;
+    padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .fdr-quotecard .qc-grid{position:absolute;inset:0;pointer-events:none;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(ellipse at top right, #000 0%, transparent 70%);
+    -webkit-mask-image:radial-gradient(ellipse at top right, #000 0%, transparent 70%);
+  }
+  .fdr-quotecard .qc-glow{position:absolute;top:-60px;right:-60px;width:240px;height:240px;
+    background:radial-gradient(circle, rgba(110,191,171,.22), transparent 70%);pointer-events:none}
+  .fdr-quotecard .qc-top{position:relative;display:flex;justify-content:space-between;align-items:flex-start}
+  .fdr-quotecard .qc-bar{width:48px;height:3px;background:var(--mint);border-radius:2px}
+  .fdr-quotecard .qc-eye{font-family:var(--ff-mono);font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.18em;text-transform:uppercase}
+  .fdr-quotecard .qc-mark{position:relative;font-family:var(--ff-en);font-weight:700;font-size:140px;color:var(--mint);line-height:.6;letter-spacing:-.06em;margin-top:6px;opacity:.95}
+  .fdr-quotecard .qc-text{
+    position:relative;font-family:var(--ff-th);font-weight:500;
+    font-size:clamp(22px,2.4vw,30px);line-height:1.35;color:#fff;text-wrap:balance;
+  }
+  .fdr-quotecard .qc-text b{color:var(--mint);font-weight:600}
+  .fdr-quotecard .qc-foot{position:relative;display:flex;justify-content:space-between;align-items:flex-end;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
+  .fdr-quotecard .qc-foot .l{font-family:var(--ff-mono);font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.14em;text-transform:uppercase}
+  .fdr-quotecard .qc-foot .wm{font-family:var(--ff-en);font-weight:700;font-size:18px;color:#fff;letter-spacing:-.02em}
+  .fdr-quotecard .qc-foot .wm em{font-style:normal;color:var(--mint)}
+
+  .fdr-quote{font-family:var(--ff-th);font-weight:500;font-size:clamp(22px,2.4vw,32px);line-height:1.35;color:var(--navy);text-wrap:balance}
+  .fdr-quote::before{content:"";display:block;width:48px;height:3px;background:var(--mint);border-radius:2px;margin-bottom:24px}
+  .fdr-byline{margin-top:32px;display:flex;align-items:center;gap:14px}
+  .fdr-byline .nm{font-weight:600;color:var(--navy)}
+  .fdr-byline .rl{font-family:var(--ff-mono);font-size:13px;color:var(--mist);letter-spacing:.04em}
+  .fdr-meta{margin-top:32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;padding-top:32px;border-top:1px solid var(--cloud-30)}
+  @media(max-width:540px){.fdr-meta{grid-template-columns:1fr 1fr}}
+  .fdr-meta .k{font-family:var(--ff-mono);font-size:11px;color:var(--mist);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+  .fdr-meta .v{font-family:var(--ff-th);font-size:15px;color:var(--navy);font-weight:500}
+
+  /* ───────────────── CTA ───────────────── */
+  .cta{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .cta-inner{position:relative;text-align:center;padding:80px 0}
+  .cta-eye{color:var(--mint);font-family:var(--ff-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px}
+  .cta h2{color:#fff;font-size:clamp(36px,5vw,68px);font-weight:700;font-family:var(--ff-en);letter-spacing:-.02em;line-height:1.05;margin:0 auto 18px;max-width:14ch}
+  .cta h2 .mint{color:var(--mint)}
+  .cta .sub{color:rgba(255,255,255,.7);font-size:18px;max-width:54ch;margin:0 auto 36px;line-height:1.6}
+  .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cta-extras{margin-top:42px;display:flex;justify-content:center;gap:32px;color:rgba(255,255,255,.55);font-family:var(--ff-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;flex-wrap:wrap}
+  .cta-extras span::before{content:"✓";color:var(--mint);margin-right:8px}
+
+  /* ───────────────── Contact / footer ───────────────── */
+  .footer{background:#0F1B36;color:rgba(255,255,255,.7);padding:80px 0 32px;position:relative}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+  @media(max-width:840px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
+  @media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
+  .foot-col h4{font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:500;margin-bottom:18px}
+  .foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{color:rgba(255,255,255,.78);font-size:14px}
+  .foot-col a:hover{color:var(--mint)}
+  .foot-brand .tagline{font-family:var(--ff-en);font-weight:500;font-size:16px;color:#fff;margin:18px 0 8px}
+  .foot-brand .tagline-th{font-family:var(--ff-th);font-size:14px;color:rgba(255,255,255,.55)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,.08);font-family:var(--ff-mono);font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:14px}
+  .foot-bottom .legal a{margin-left:24px}
+
+  /* ───────────────── Marquee tagline strip ───────────────── */
+  .marquee-strip{
+    background:var(--mint);color:var(--navy);padding:22px 0;overflow:hidden;
+    border-top:1px solid rgba(27,42,74,.1);border-bottom:1px solid rgba(27,42,74,.1);
+  }
+  .marquee-track{
+    display:flex;gap:48px;white-space:nowrap;
+    animation:marquee 40s linear infinite;
+    font-family:var(--ff-en);font-weight:500;font-size:22px;letter-spacing:-.01em;
+  }
+  .marquee-track span{display:inline-flex;align-items:center;gap:48px}
+  .marquee-track .sep{font-family:var(--ff-mono);color:var(--navy-70);font-size:18px}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* Tweaks helpers */
+  body.theme-mint .btn-primary{background:var(--mint);color:var(--navy)}
+  body.theme-mint .btn-primary:hover{background:#5CB29D}
+  body.theme-mint .cta h2 .mint{color:#fff}
+  body.theme-mint .cta h2{color:#fff}
+
+  /* Hide hero alt by default */
+  .hero-art-grid{display:none}
+  body.hero-grid .hero-art-card{display:none}
+  body.hero-grid .hero-art-grid{display:block}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Decorative number art (alt hero) */
+  .hero-art-grid{position:relative;aspect-ratio:1/1;background:#fff;border:1px solid var(--cloud-30);border-radius:var(--r-xl);padding:32px;overflow:hidden;box-shadow:var(--shadow-card)}
+  .hero-art-grid .bg{position:absolute;inset:0;
+    background-image:
+      linear-gradient(to right, rgba(27,42,74,.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27,42,74,.06) 1px, transparent 1px);
+    background-size:32px 32px;}
+  .hero-art-grid .big-9{position:absolute;font-family:var(--ff-mono);font-weight:500;font-size:min(42vw,520px);color:var(--navy);letter-spacing:-.06em;line-height:.85;top:-20px;left:-10px}
+  .hero-art-grid .big-9 .pct{color:var(--mint);font-size:.5em;vertical-align:top;margin-left:6px;letter-spacing:0}
+  .hero-art-grid .lbl{position:absolute;bottom:32px;left:32px;right:32px;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--ff-mono);font-size:11px;color:var(--mist);letter-spacing:.14em;text-transform:uppercase}
+  .hero-art-grid .lbl b{font-family:var(--ff-th);font-weight:500;font-size:15px;color:var(--navy);display:block;text-transform:none;letter-spacing:0;margin-bottom:4px}
+
+  /* ───────────────── Mobile polish (≤640px) ───────────────── */
+  @media(max-width:640px){
+    body{font-size:15px}
+    .container{padding:0 18px}
+
+    /* Nav */
+    .nav-inner{height:60px}
+    .logo .logo-img{height:28px}
+    .nav-cta{gap:8px}
+    .btn{padding:11px 16px;font-size:14px;gap:6px}
+    .btn-sm{padding:9px 14px;font-size:13px}
+
+    /* Hero */
+    .hero{padding:48px 0 64px}
+    .hero-eyebrow{margin-bottom:20px;gap:10px}
+    .hero-eyebrow .eyebrow{font-size:10px;letter-spacing:.14em}
+    .hero-title{margin-bottom:22px}
+    .h-display{font-size:40px;line-height:1.04}
+    .hero-title .th-supp{font-size:17px;margin-top:14px;line-height:1.4}
+    .lede{font-size:16px;line-height:1.55}
+    .hero-cta{margin-top:24px;gap:10px;flex-direction:column;align-items:stretch}
+    .hero-cta .btn{justify-content:center;width:100%}
+    .hero-creds{gap:18px 22px;margin-top:32px;padding-top:24px}
+    .hero-creds .cred-t{font-size:13px}
+    .hero-creds .cred-d{font-size:10px}
+
+    /* Generic sections */
+    .sec{padding:64px 0}
+    .sec-head{margin-bottom:36px;gap:24px}
+    .sec-head .desc{font-size:15px}
+    .h2{font-size:24px;line-height:1.25}
+    .h3{font-size:18px}
+
+    /* Trust */
+    .trust{padding:24px 0}
+    .trust-inner{gap:16px}
+    .trust-logos{gap:24px}
+    .trust-logos .tl{font-size:15px}
+
+    /* Services */
+    .svc{padding:28px 22px;min-height:0}
+
+    /* Approach rows */
+    .ap-row .ap-time{font-size:11px}
+
+    /* Case study */
+    .case{padding:64px 0}
+    .case h2{font-size:26px;line-height:1.2}
+    .case .quote{font-size:15px;margin-bottom:24px}
+
+    /* Insights */
+    .ins-grid{gap:16px}
+
+    /* Founder */
+    .fdr-inner{gap:32px}
+    .fdr-meta{margin-top:24px;padding-top:24px;gap:16px}
+
+    /* Marquee — quieter on mobile */
+    .marquee-track{font-size:16px;gap:28px;animation-duration:30s}
+    .marquee-track span{gap:28px}
+    .marquee-track .sep{font-size:13px}
+
+    /* CTA section */
+    .cta-btns{flex-direction:column;align-items:stretch}
+    .cta-btns .btn{justify-content:center;width:100%}
+
+    /* Footer */
+    .footer{padding:56px 0 28px}
+    .foot-grid{gap:28px;margin-bottom:40px}
+  }
+
+  /* Extra-tight (≤380px) */
+  @media(max-width:380px){
+    .h-display{font-size:34px}
+    .nav-cta .btn{padding:9px 12px;font-size:13px}
+    .nav-cta .btn .arr{display:none}
+    .logo .logo-img{height:24px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ───────────────── NAV ───────────────── -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#top">
+      <img class="logo-img" src="assets/numerics-logo.png" alt="Numerics Advisory" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">บริการ</a>
+      <a href="#approach">วิธีทำงาน</a>
+      <a href="articles/index.html">บทความ</a>
+      <a href="#about">เกี่ยวกับ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="#cta">นัดปรึกษาฟรี <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ───────────────── HERO ───────────────── -->
+<section class="hero hero-photo-mode" id="top">
+  <div class="hero-bg" style="background-image:url(assets/hero-dashboard.webp)"></div>
+  <div class="hero-scrim"></div>
+  <div class="grid-bg on-dark"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy reveal">
+      <div class="hero-eyebrow">
+        <span class="mint-bar"></span>
+        <span class="eyebrow">Numerics Advisory · ที่ปรึกษาบัญชี &amp; ตรวจสอบ</span>
+      </div>
+      <h1 class="h-display hero-title">
+        <span>Beyond</span>
+        <span class="line2">Numbers.</span>
+        <span class="th-supp">ตัวเลขที่เข้าใจธุรกิจคุณ<br/>เราเปลี่ยนบัญชีให้กลายเป็นเครื่องมือตัดสินใจที่ชัดเจน</span>
+      </h1>
+      <p class="lede">มากกว่าแค่การทำบัญชี คือการสร้าง<b style="color:var(--navy);font-weight:600">"ความชัดเจน"</b>ให้ธุรกิจ ให้คุณเห็น cash flow, ต้นทุน และโอกาสเติบโตได้ในภาษาที่เข้าใจง่าย ไม่ใช่ศัพท์เทคนิคที่น่ากลัว</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="services/health-check.html">นัด Health Check ฟรี · 30 นาที <span class="arr">→</span></a>
+        <a class="btn btn-ghost on-dark" href="#services">ดูบริการทั้งหมด</a>
+      </div>
+      <div class="hero-creds">
+        <div class="cred">
+          <span class="cred-tick">✓</span>
+          <div>
+            <div class="cred-t">CPA Thailand</div>
+            <div class="cred-d">ผู้สอบบัญชีรับอนุญาต</div>
+          </div>
+        </div>
+        <div class="cred">
+          <span class="cred-tick">✓</span>
+          <div>
+            <div class="cred-t">TFRS / TAS</div>
+            <div class="cred-d">มาตรฐานสากล</div>
+          </div>
+        </div>
+        <div class="cred">
+          <span class="cred-tick">✓</span>
+          <div>
+            <div class="cred-t">Beyond Compliance</div>
+            <div class="cred-d">ปรึกษาได้ตลอดปี</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art-removed" style="display:none"></div>
+  </div>
+</section>
+
+<!-- ───────────────── SERVICES ───────────────── -->
+<section class="sec services" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <div class="left">
+        <div class="eyebrow"><span class="dot"></span> 01 · บริการของเรา</div>
+        <h2 class="h2">บริการครบวงจร<br/>ตั้งแต่บัญชีรายเดือนจนถึงการตัดสินใจระดับ&nbsp;Board</h2>
+      </div>
+      <p class="desc">เลือกบริการเฉพาะที่คุณต้องการ หรือให้เราดูแลทั้งระบบ ทุกแพ็กเกจมาพร้อมที่ปรึกษาประจำและรายงานที่อ่านเข้าใจจริง</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc">
+        <div class="num">01 / Setup</div>
+        <h3 class="h3">Business Setup</h3>
+        <p class="desc">วางรากฐานธุรกิจให้ถูกตั้งแต่วันแรก — เปิดบริษัท จด VAT โครงสร้างหุ้น พร้อมวางระบบบัญชี + Chart of Accounts</p>
+        <a class="more" href="services/business-setup.html">ดูรายละเอียด</a>
+      </article>
+      <article class="svc">
+        <div class="num">02 / Bookkeeping</div>
+        <h3 class="h3">ทำบัญชีรายเดือน</h3>
+        <p class="desc">บันทึกบัญชี ปิดงบเดือน ยื่นภาษี ภพ.30, ภงด.1, 3, 53 ครบวงจร พร้อม dashboard ดูสุขภาพการเงินแบบ real-time</p>
+        <a class="more" href="services/bookkeeping.html">ดูรายละเอียด</a>
+      </article>
+      <article class="svc">
+        <div class="num">03 / Audit</div>
+        <h3 class="h3">ตรวจสอบบัญชี</h3>
+        <p class="desc">ตรวจสอบงบการเงินตามมาตรฐาน TFRS / TAS โดยผู้สอบบัญชีรับอนุญาต (CPA) พร้อมข้อเสนอแนะเชิงปฏิบัติ</p>
+        <a class="more" href="services/audit.html">ดูรายละเอียด</a>
+      </article>
+      <article class="svc">
+        <div class="num">04 / Tax</div>
+        <h3 class="h3">วางแผนภาษี</h3>
+        <p class="desc">ออกแบบโครงสร้างภาษีให้ถูกต้อง ประหยัด และโตได้ ครอบคลุมทั้งนิติบุคคล บุคคลธรรมดา และ BOI</p>
+        <a class="more" href="services/tax-planning.html">ดูรายละเอียด</a>
+      </article>
+      <article class="svc">
+        <div class="num">05 / Intelligence</div>
+        <h3 class="h3">Financial Intelligence</h3>
+        <p class="desc">วิเคราะห์งบ Cash Flow ต้นทุน margin profitability ยอดขาย และ performance ของลูกค้า/สินค้า/ช่องทาง — ตัวเลขที่บอกได้ว่าจะตัดสินใจยังไง</p>
+        <a class="more" href="services/financial-intelligence.html">ดูรายละเอียด</a>
+      </article>
+      <article class="svc">
+        <div class="num">06 / Strategy</div>
+        <h3 class="h3">Strategic Advisory</h3>
+        <p class="desc">ตัวเลขเพื่อการเติบโต — Business Valuation, Growth Scenario Modeling, Investment &amp; Exit Readiness สำหรับธุรกิจที่กำลังจะ scale</p>
+        <a class="more" href="services/strategic-advisory.html">ดูรายละเอียด</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── PHILOSOPHY ───────────────── -->
+<section class="sec philo" id="philosophy">
+  <div class="grid-bg subtle"></div>
+  <div class="container" style="position:relative">
+    <div class="sec-head">
+      <div class="left">
+        <div class="eyebrow"><span class="dot"></span> 02 · ปรัชญาการทำงาน</div>
+        <h2 class="h2">สามหลักคิดที่ทำให้เรา<br/>ไม่เหมือนสำนักงานบัญชีทั่วไป</h2>
+      </div>
+      <p class="desc">เราเชื่อว่าตัวเลขทางการเงินคือเครื่องมือที่ช่วยให้ธุรกิจเติบโตอย่างมั่นคง — ไม่ใช่แค่หลีกเลี่ยงค่าปรับ</p>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar">
+        <div class="num-glow"></div>
+        <div class="tag">01 · Principle</div>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 12L10 18L20 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Clarity First</h3>
+        <p>ทุกสิ่งที่เราทำต้องทำให้เข้าใจง่ายขึ้น ไม่ซับซ้อนขึ้น รายงานหนึ่งหน้าที่ผู้บริหารอ่านได้ใน 5 นาที สำคัญกว่าเล่มหนาที่ไม่มีใครเปิด</p>
+      </article>
+      <article class="pillar">
+        <div class="num-glow"></div>
+        <div class="tag">02 · Principle</div>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="9" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 19c1-3 3.5-4 5-4M21 19c-1-3-3.5-4-5-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>True Partnership</h3>
+        <p>เราโตไปพร้อมกับลูกค้า ไม่ใช่แค่ผู้ให้บริการที่รอใบเสร็จสิ้นเดือน ปรึกษาได้ทุกเมื่อ ไม่นับชั่วโมง ไม่คิดเพิ่ม</p>
+      </article>
+      <article class="pillar">
+        <div class="num-glow"></div>
+        <div class="tag">03 · Principle</div>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L12 5L19 19M8 14H16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Beyond Compliance</h3>
+        <p>บัญชีที่ดีสร้างการตัดสินใจที่ดี ไม่ใช่แค่หลีกเลี่ยงค่าปรับ เราหา insight จากตัวเลขที่คุณมีอยู่แล้ว เพื่อหาโอกาสและจุดรั่ว</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── APPROACH ───────────────── -->
+<section class="sec approach" id="approach">
+  <div class="container">
+    <div class="sec-head">
+      <div class="left">
+        <div class="eyebrow"><span class="dot"></span> 03 · กระบวนการทำงาน</div>
+        <h2 class="h2">เริ่มทำงานร่วมกันใน 4 ขั้นตอน<br/>ใช้เวลาแค่ 14 วัน</h2>
+      </div>
+      <p class="desc">ไม่ต้องเตรียมเอกสารยุ่งยาก เราเข้าไปอ่านระบบที่คุณมี แล้วออกแบบ workflow ใหม่ให้ตรงกับธุรกิจ</p>
+    </div>
+
+    <div class="ap-list">
+      <div class="ap-row">
+        <div class="step">STEP 01</div>
+        <h3>Health Check &amp; Discovery</h3>
+        <div>
+          <div class="ap-desc">นัดคุยฟรี 30 นาที เพื่อทำความเข้าใจธุรกิจ ดูระบบบัญชีและรายงานที่ใช้อยู่ ระบุ 3 สัญญาณเสี่ยงและโอกาส</div>
+          <div class="ap-time">วันที่ 1 · 30 นาที</div>
+        </div>
+      </div>
+      <div class="ap-row">
+        <div class="step">STEP 02</div>
+        <h3>Proposal &amp; Scope</h3>
+        <div>
+          <div class="ap-desc">ส่งข้อเสนอที่ระบุชัดว่าได้อะไร ราคาคงที่ต่อเดือน ไม่มีค่าใช้จ่ายซ่อน เลือกแพ็กเกจหรือ customize ได้</div>
+          <div class="ap-time">วันที่ 2–4 · ภายใน 72 ชม.</div>
+        </div>
+      </div>
+      <div class="ap-row">
+        <div class="step">STEP 03</div>
+        <h3>Onboarding &amp; Setup</h3>
+        <div>
+          <div class="ap-desc">โอนถ่ายข้อมูลจากระบบเดิม ตั้ง chart of accounts ใหม่ให้สะอาด เชื่อม LINE OA และ dashboard เริ่มใช้งานทันที</div>
+          <div class="ap-time">วันที่ 5–10 · 5 วันทำการ</div>
+        </div>
+      </div>
+      <div class="ap-row">
+        <div class="step">STEP 04</div>
+        <h3>Operate &amp; Advise</h3>
+        <div>
+          <div class="ap-desc">รายงานรายเดือนพร้อมประชุม insight 1 ครั้ง ปรึกษาได้ตลอดผ่าน LINE OA — ทุกคำตอบภายใน 1 วันทำการ</div>
+          <div class="ap-time">ต่อเนื่อง · เริ่มเดือนที่ 1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── INSIGHTS ───────────────── -->
+<section class="sec insights" id="insights">
+  <div class="container">
+    <div class="sec-head">
+      <div class="left">
+        <div class="eyebrow"><span class="dot"></span> 04 · บทความและความรู้</div>
+        <h2 class="h2">ความรู้บัญชี-ภาษีที่อ่านง่าย<br/>เขียนสำหรับเจ้าของธุรกิจ</h2>
+      </div>
+      <a class="btn btn-ghost btn-sm" href="articles/index.html">ดูบทความทั้งหมด <span class="arr">→</span></a>
+    </div>
+
+    <div class="ins-grid">
+      <a class="ins" href="articles/audit-prep-checklist.html">
+        <div class="ins-cover c1" style="background-image:url(assets/insight-audit-prep.webp)">
+          <div class="ins-scrim"></div>
+          <div class="small-tag">Audit Prep</div>
+        </div>
+        <div class="ins-body">
+          <div class="ins-tag">Audit</div>
+          <h3 class="ins-title">เตรียมตัวก่อนตรวจสอบบัญชี: Checklist 12 ข้อ ที่ลดเวลา audit ได้ครึ่งหนึ่ง</h3>
+          <div class="ins-meta"><span>อ่าน 7 นาที</span><span>15 พ.ค. 2569</span></div>
+        </div>
+      </a>
+
+      <a class="ins" href="articles/cash-flow-signals.html">
+        <div class="ins-cover c2" style="background-image:url(assets/insight-cashflow.webp)">
+          <div class="ins-scrim"></div>
+          <div class="small-tag">Signals</div>
+        </div>
+        <div class="ins-body">
+          <div class="ins-tag">Cash Flow</div>
+          <h3 class="ins-title">3 สัญญาณว่า Cash Flow ธุรกิจของคุณกำลังรั่ว — และวิธีหาให้เจอ</h3>
+          <div class="ins-meta"><span>อ่าน 6 นาที</span><span>10 พ.ค. 2569</span></div>
+        </div>
+      </a>
+
+      <a class="ins" href="articles/choosing-accounting-firm.html">
+        <div class="ins-cover c3" style="background-image:url(assets/insight-choosing-firm.webp)">
+          <div class="ins-scrim"></div>
+          <div class="small-tag">Guide</div>
+        </div>
+        <div class="ins-body">
+          <div class="ins-tag">Behind Numerics</div>
+          <h3 class="ins-title">เลือกสำนักงานบัญชียังไงให้ไม่ผิดหวัง — 5 คำถามที่คุณต้องถามก่อนเซ็น</h3>
+          <div class="ins-meta"><span>อ่าน 6 นาที</span><span>08 พ.ค. 2569</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── FOUNDER ───────────────── -->
+<section class="sec founder" id="about">
+  <div class="container fdr-inner">
+    <div class="fdr-quotecard">
+      <div class="qc-grid"></div>
+      <div class="qc-glow"></div>
+      <div class="qc-top">
+        <span class="qc-bar"></span>
+        <span class="qc-eye">Brand Philosophy</span>
+      </div>
+      <div class="qc-mark" aria-hidden="true">“</div>
+      <div class="qc-text">มากกว่าแค่การทำบัญชี คือการสร้าง <b>“ความชัดเจน”</b> ให้ธุรกิจ</div>
+      <div class="qc-foot">
+        <span class="l">Numerics Advisory<br/>Founding Principle</span>
+        <span class="wm">Numerics<em>.</em></span>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow"><span class="dot"></span> 05 · เกี่ยวกับเรา</div>
+      <h2 class="h2" style="margin:18px 0 24px">พบกับ Founder ของ Numerics</h2>
+      <blockquote class="fdr-quote">
+        "ตัวเลขที่ดีสร้างการตัดสินใจที่ดี และการตัดสินใจที่ดีสร้างธุรกิจที่ยั่งยืน — เราอยากเป็นคนที่ผู้บริหารโทรหาก่อนตัดสินใจ ไม่ใช่หลังจบไตรมาส"
+      </blockquote>
+      <div class="fdr-byline">
+        <div>
+          <div class="nm">อชิรญา ถิตตยานุรักษ์</div>
+          <div class="rl">Founder &amp; Managing Director · CPA</div>
+        </div>
+      </div>
+      <div class="fdr-meta" style="grid-template-columns:1fr 1fr">
+        <div><div class="k">Credential</div><div class="v">CPA Thailand</div></div>
+        <div><div class="k">Standards</div><div class="v">TFRS / TAS</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── Marquee strip ───────────────── -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Beyond Numbers <span class="sep">·</span> ตัวเลขที่เข้าใจธุรกิจคุณ <span class="sep">·</span> Clarity First <span class="sep">·</span> True Partnership <span class="sep">·</span> Beyond Compliance <span class="sep">·</span> Numerics Advisory <span class="sep">·</span></span>
+    <span>Beyond Numbers <span class="sep">·</span> ตัวเลขที่เข้าใจธุรกิจคุณ <span class="sep">·</span> Clarity First <span class="sep">·</span> True Partnership <span class="sep">·</span> Beyond Compliance <span class="sep">·</span> Numerics Advisory <span class="sep">·</span></span>
+  </div>
+</div>
+
+<!-- ───────────────── CTA ───────────────── -->
+<section class="cta" id="cta">
+  <div class="grid-bg on-dark"></div>
+  <div class="container cta-inner">
+    <div class="cta-eye">Free 30-min Health Check</div>
+    <h2>เริ่มเห็นตัวเลขที่<br/><span class="mint">เข้าใจธุรกิจคุณ</span></h2>
+    <p class="sub">นัดคุยกับที่ปรึกษาฟรี 30 นาที — ไม่มีเซลส์ ไม่มีพรีเซนต์ มาช่วยกันหา 3 สัญญาณเสี่ยงและ 2 โอกาสในบัญชีของคุณ</p>
+    <div class="cta-btns">
+      <a class="btn btn-mint" href="services/health-check.html">นัด Health Check ฟรี <span class="arr">→</span></a>
+      <a class="btn btn-ghost on-dark" href="brochure/numerics-service-brochure.html" target="_blank" rel="noopener">ดาวน์โหลด Service Brochure</a>
+    </div>
+    <div class="cta-extras">
+      <span>ไม่มีค่าใช้จ่าย</span>
+      <span>ไม่ผูกมัด</span>
+      <span>ตอบกลับใน 1 วันทำการ</span>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── FOOTER ───────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand">
+        <a class="logo reversed" href="#top">
+          <img class="logo-img logo-img-rev" src="assets/numerics-logo.png" alt="Numerics Advisory" />
+        </a>
+        <div class="tagline">Beyond Numbers</div>
+        <div class="tagline-th">ตัวเลขที่เข้าใจธุรกิจคุณ</div>
+      </div>
+      <div class="foot-col">
+        <h4>บริการ</h4>
+        <ul>
+          <li><a href="services/business-setup.html">Business Setup</a></li>
+          <li><a href="services/bookkeeping.html">ทำบัญชีรายเดือน</a></li>
+          <li><a href="services/audit.html">ตรวจสอบบัญชี</a></li>
+          <li><a href="services/tax-planning.html">วางแผนภาษี</a></li>
+          <li><a href="services/financial-intelligence.html">Financial Intelligence</a></li>
+          <li><a href="services/strategic-advisory.html">Strategic Advisory</a></li>
+          <li><a href="services/health-check.html">Health Check ฟรี</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>บริษัท</h4>
+        <ul>
+          <li><a href="#about">เกี่ยวกับเรา</a></li>
+          <li><a href="articles/index.html">บทความ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>ติดต่อ</h4>
+        <ul>
+          <li><a href="mailto:achiraya@numericsadvisory.com">achiraya@numericsadvisory.com</a></li>
+          <li><a href="tel:+66952249795">+66 95 224 9795</a></li>
+          <li><a href="https://line.me/R/ti/p/@numerics" target="_blank" rel="noopener">LINE: @numerics</a></li>
+          <li><a href="services/health-check.html">นัดประชุมออนไลน์</a></li>
+          <li style="margin-top:6px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.55);font-size:13px;line-height:1.55;font-style:normal">เลขที่ 1 อาคารเอ็มไพร์ ทาวเวอร์<br/>ชั้น 47 ยูนิต 4703 ถนนสาทรใต้<br/>แขวงยานนาวา เขตสาทร<br/>กรุงเทพมหานคร 10120</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2569 Numerics Advisory Co., Ltd. · เลขทะเบียน 0105568203961</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ───────────────── Behavior ───────────────── -->
+<script>
+  // Smooth reveal-on-scroll
+  const io = new IntersectionObserver((entries)=>{
+    for(const e of entries){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    }
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Reduce nav bg-blur fall-back
+  if(!CSS.supports('backdrop-filter','blur(2px)')){
+    document.querySelector('.nav').style.background = '#fff';
+  }
+</script>
+</body>
+</html>

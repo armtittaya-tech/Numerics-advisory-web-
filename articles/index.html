@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>บทความ · Insights — Numerics Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,800&family=DM+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="article.css" />
+<style>
+  /* Index-specific styles */
+  .idx-hero{background:var(--snow);padding:80px 0 64px;border-bottom:1px solid var(--cloud-30);position:relative;overflow:hidden}
+  .idx-hero .grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(to right, rgba(27,42,74,.05) 1px, transparent 1px),linear-gradient(to bottom, rgba(27,42,74,.05) 1px, transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at center, #000 25%, transparent 75%);-webkit-mask-image:radial-gradient(ellipse at center, #000 25%, transparent 75%)}
+  .idx-hero-inner{position:relative;max-width:880px;margin:0 auto}
+  .idx-eye{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .idx-eye .bar{width:48px;height:3px;background:var(--mint);border-radius:2px}
+  .idx-eye .lbl{font-family:var(--ff-mono);font-size:11px;color:var(--mist);letter-spacing:.18em;text-transform:uppercase}
+  .idx-title{font-family:var(--ff-en);font-weight:700;font-size:clamp(40px,5.6vw,72px);line-height:1.04;letter-spacing:-.025em;margin:0 0 24px;color:var(--navy)}
+  .idx-title .th{display:block;font-family:var(--ff-th);font-weight:600;font-size:.45em;color:var(--navy-70);margin-top:14px;letter-spacing:0;line-height:1.4}
+  .idx-deck{font-size:18px;line-height:1.6;color:var(--navy-70);max-width:60ch;margin:0}
+
+  /* Filter chips */
+  .idx-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:48px;padding-top:32px;border-top:1px solid var(--cloud-30)}
+  .idx-chip{padding:8px 16px;border-radius:999px;border:1px solid var(--cloud-30);background:#fff;font-family:var(--ff-th);font-size:13px;color:var(--navy-70);cursor:pointer;transition:all .2s;white-space:nowrap}
+  .idx-chip:hover{border-color:var(--navy);color:var(--navy)}
+  .idx-chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .idx-chip .ct{font-family:var(--ff-mono);font-size:11px;color:var(--mist);margin-left:6px}
+  .idx-chip.active .ct{color:rgba(255,255,255,.5)}
+
+  /* Article list */
+  .idx-list{padding:80px 0 96px}
+  .idx-list-inner{max-width:980px;margin:0 auto}
+  .idx-section-h{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px}
+  .idx-section-h h2{margin:0;font-family:var(--ff-th);font-weight:600;font-size:22px;color:var(--navy)}
+  .idx-section-h .ct{font-family:var(--ff-mono);font-size:12px;color:var(--mist);letter-spacing:.06em}
+
+  /* Featured (first) article */
+  .idx-feat{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:48px;
+    background:var(--navy);color:#fff;border-radius:var(--r-xl);
+    padding:48px;position:relative;overflow:hidden;margin-bottom:48px;
+    align-items:center;
+  }
+  .idx-feat .feat-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at top right, #000 0%, transparent 70%);-webkit-mask-image:radial-gradient(ellipse at top right, #000 0%, transparent 70%)}
+  .idx-feat .feat-glow{position:absolute;top:-80px;right:-80px;width:280px;height:280px;background:radial-gradient(circle, rgba(110,191,171,.22), transparent 70%);pointer-events:none}
+  .idx-feat > *{position:relative}
+  .idx-feat .feat-eye{font-family:var(--ff-mono);font-size:11px;color:var(--mint);letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .idx-feat .feat-eye .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(110,191,171,.2)}
+  .idx-feat h3{margin:0 0 18px;font-family:var(--ff-th);font-weight:600;font-size:clamp(26px,3vw,38px);line-height:1.2;color:#fff;text-wrap:balance}
+  .idx-feat .feat-desc{margin:0 0 24px;color:rgba(255,255,255,.75);font-size:16px;line-height:1.6}
+  .idx-feat .feat-meta{display:flex;gap:24px;font-family:var(--ff-mono);font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.04em;margin-bottom:28px}
+  .idx-feat .feat-meta b{color:#fff;font-weight:400}
+  .idx-feat .feat-cta{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:var(--mint);color:var(--navy);font-family:var(--ff-th);font-weight:500;font-size:15px;transition:all .2s}
+  .idx-feat .feat-cta:hover{background:#5CB29D}
+  .idx-feat .feat-cta .arr{transition:transform .2s}
+  .idx-feat .feat-cta:hover .arr{transform:translateX(3px)}
+  .idx-feat .feat-art{font-family:var(--ff-mono);font-weight:500;font-size:min(20vw,200px);line-height:.85;color:var(--mint);letter-spacing:-.06em;text-align:right;opacity:.95}
+  .idx-feat .feat-art .sub{display:block;font-family:var(--ff-th);font-weight:500;font-size:14px;color:rgba(255,255,255,.6);letter-spacing:.06em;text-align:right;margin-top:14px;line-height:1.4}
+  @media(max-width:780px){
+    .idx-feat{grid-template-columns:1fr;padding:32px}
+    .idx-feat .feat-art{display:none}
+  }
+
+  /* Card grid */
+  .idx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  @media(max-width:720px){.idx-grid{grid-template-columns:1fr}}
+
+  .idx-card{
+    background:#fff;border:1px solid var(--cloud-30);border-radius:var(--r-lg);
+    display:flex;flex-direction:column;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    overflow:hidden;
+  }
+  .idx-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px -16px rgba(27,42,74,.2);border-color:var(--cloud)}
+
+  .idx-card .ic-cover{aspect-ratio:16/9;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--cloud-30)}
+  .idx-card .ic-cover .grid{position:absolute;inset:0;background-image:linear-gradient(to right, rgba(27,42,74,.06) 1px, transparent 1px),linear-gradient(to bottom, rgba(27,42,74,.06) 1px, transparent 1px);background-size:24px 24px}
+  .idx-card .ic-cover .big{position:relative;font-family:var(--ff-mono);font-weight:500;font-size:88px;letter-spacing:-.04em;line-height:1;color:var(--navy)}
+  .idx-card .ic-cover .tag{position:absolute;top:18px;left:18px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+  .idx-card .ic-cover .pct{color:var(--mint);font-size:.45em;vertical-align:top;margin-left:4px;letter-spacing:0}
+
+  /* Cover variants */
+  .ic-cover.c-snow{background:var(--snow)}
+  .ic-cover.c-mint{background:var(--mint-soft)}
+  .ic-cover.c-mint .big{color:var(--navy)}
+  .ic-cover.c-navy{background:var(--navy)}
+  .ic-cover.c-navy .grid{background-image:linear-gradient(to right, rgba(255,255,255,.07) 1px, transparent 1px),linear-gradient(to bottom, rgba(255,255,255,.07) 1px, transparent 1px)}
+  .ic-cover.c-navy .big{color:var(--mint)}
+  .ic-cover.c-navy .tag{color:rgba(255,255,255,.5)}
+  .ic-cover.c-amber{background:rgba(240,183,84,.12)}
+  .ic-cover.c-amber .big{color:#B8842B}
+
+  .idx-card .ic-body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .idx-card .ic-tag{font-family:var(--ff-mono);font-size:11px;color:var(--mint);letter-spacing:.12em;text-transform:uppercase}
+  .idx-card h3{margin:0;font-family:var(--ff-th);font-weight:600;font-size:18px;color:var(--navy);line-height:1.4;text-wrap:balance}
+  .idx-card .ic-desc{margin:0;font-size:14px;color:var(--navy-70);line-height:1.6}
+  .idx-card .ic-meta{margin-top:auto;padding-top:14px;border-top:1px solid var(--cloud-30);display:flex;justify-content:space-between;font-family:var(--ff-mono);font-size:11px;color:var(--mist);letter-spacing:.04em}
+
+  /* Newsletter CTA */
+  .nl{padding:80px 0;background:var(--snow);border-top:1px solid var(--cloud-30)}
+  .nl-inner{max-width:780px;margin:0 auto;text-align:center}
+  .nl-eye{font-family:var(--ff-mono);font-size:11px;color:var(--mint);letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
+  .nl h2{margin:0 0 14px;font-family:var(--ff-th);font-weight:600;font-size:clamp(26px,3vw,36px);line-height:1.2;color:var(--navy);text-wrap:balance}
+  .nl p{margin:0 0 28px;color:var(--navy-70);font-size:16px;line-height:1.6;max-width:54ch;margin-left:auto;margin-right:auto}
+  .nl form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+  .nl input{flex:1;min-width:200px;padding:14px 18px;border-radius:999px;border:1px solid var(--cloud);background:#fff;font-family:var(--ff-th);font-size:15px;color:var(--navy);outline:none;transition:border-color .2s}
+  .nl input:focus{border-color:var(--navy)}
+  .nl button{padding:14px 22px;border-radius:999px;background:var(--navy);color:#fff;font-family:var(--ff-th);font-weight:500;font-size:15px;cursor:pointer;transition:background .2s}
+  .nl button:hover{background:#0F1B36}
+  .nl .micro{margin-top:14px;font-family:var(--ff-mono);font-size:11px;color:var(--mist);letter-spacing:.06em}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="../index.html">
+      <img class="logo-img" src="../assets/numerics-logo.png" alt="Numerics Advisory" />
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#services">บริการ</a>
+      <a href="../index.html#approach">วิธีทำงาน</a>
+      <a href="index.html" class="active" style="color:var(--navy);font-weight:500">บทความ</a>
+      <a href="../index.html#about">เกี่ยวกับ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="../index.html#cta">นัดปรึกษาฟรี <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="idx-hero" data-screen-label="Index Hero">
+  <div class="grid-bg"></div>
+  <div class="container">
+    <div class="idx-hero-inner">
+      <div class="idx-eye">
+        <span class="bar"></span>
+        <span class="lbl">Insights · บทความและความรู้</span>
+      </div>
+      <h1 class="idx-title">
+        Beyond Numbers.
+        <span class="th">ความรู้บัญชี-ภาษี ที่อ่านง่าย<br/>เขียนสำหรับเจ้าของธุรกิจ ไม่ใช่นักบัญชี</span>
+      </h1>
+      <p class="idx-deck">ทุกบทความเขียนโดยทีม Numerics จากประสบการณ์จริงในการดูแลธุรกิจ SME ไทย ไม่มีศัพท์เทคนิคที่ไม่จำเป็น ไม่มีการบรรยายกฎหมายแบบรวบรัด — แค่สิ่งที่คุณ "ใช้ได้จริง"</p>
+
+      <div class="idx-filters">
+        <button class="idx-chip active" data-filter="all">ทั้งหมด <span class="ct">06</span></button>
+        <button class="idx-chip" data-filter="Cash Flow">Cash Flow <span class="ct">02</span></button>
+        <button class="idx-chip" data-filter="Tax">Tax Planning <span class="ct">02</span></button>
+        <button class="idx-chip" data-filter="Audit">Audit <span class="ct">01</span></button>
+        <button class="idx-chip" data-filter="Behind">Behind Numerics <span class="ct">01</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="idx-list" data-screen-label="Article list">
+  <div class="container">
+    <div class="idx-list-inner">
+
+      <!-- Featured article -->
+      <a class="idx-feat" href="cash-flow-signals.html" data-tag="Cash Flow">
+        <div class="feat-bg"></div>
+        <div class="feat-glow"></div>
+        <div>
+          <div class="feat-eye"><span class="dot"></span> บทความแนะนำ · Featured</div>
+          <h3>3 สัญญาณว่า Cash Flow ธุรกิจของคุณกำลังรั่ว — และวิธีหาให้เจอใน 30 วัน</h3>
+          <p class="feat-desc">งบกำไรขาดทุนบอกว่าธุรกิจ "ได้กำไร" แต่บัญชีกลับไม่มีเงินจ่ายซัพพลายเออร์ — ปัญหานี้พบในเกือบทุก SME ที่เราเข้าไปดู</p>
+          <div class="feat-meta">
+            <span>หมวด · <b>Cash Flow</b></span>
+            <span>อ่าน · <b>6 นาที</b></span>
+            <span>10 พ.ค. 2569</span>
+          </div>
+          <span class="feat-cta">อ่านบทความ <span class="arr">→</span></span>
+        </div>
+        <div class="feat-art" aria-hidden="true">3<span class="sub">signals to watch</span></div>
+      </a>
+
+      <div class="idx-section-h">
+        <h2>บทความทั้งหมด</h2>
+        <span class="ct">เรียงตามวันที่ใหม่สุด</span>
+      </div>
+
+      <div class="idx-grid" id="article-grid">
+
+        <a class="idx-card" href="audit-prep-checklist.html" data-tag="Audit">
+          <div class="ic-cover c-snow">
+            <div class="grid"></div>
+            <div class="tag">Audit Prep</div>
+            <div class="big">✓</div>
+          </div>
+          <div class="ic-body">
+            <div class="ic-tag">Audit</div>
+            <h3>เตรียมตัวก่อนตรวจสอบบัญชี: Checklist 12 ข้อ ที่ลดเวลา audit ได้ครึ่งหนึ่ง</h3>
+            <p class="ic-desc">ระบบบัญชีที่เป็นระเบียบไม่ได้แค่ทำให้ audit ผ่านง่ายขึ้น — มันลดเวลาทำงานของทีมและค่าธรรมเนียมด้วย</p>
+            <div class="ic-meta"><span>อ่าน 7 นาที</span><span>15 พ.ค. 2569</span></div>
+          </div>
+        </a>
+
+        <a class="idx-card" href="cash-flow-signals.html" data-tag="Cash Flow">
+          <div class="ic-cover c-snow">
+            <div class="grid"></div>
+            <div class="tag">Signals</div>
+            <div class="big">03</div>
+          </div>
+          <div class="ic-body">
+            <div class="ic-tag">Cash Flow</div>
+            <h3>3 สัญญาณว่า Cash Flow ธุรกิจของคุณกำลังรั่ว — และวิธีหาให้เจอ</h3>
+            <p class="ic-desc">กำไรในงบสวย แต่บัญชีกลับไม่มีเงินจ่าย — 3 จุดที่ "ดูดเงิน" ออกจากธุรกิจโดยที่ผู้บริหารไม่รู้</p>
+            <div class="ic-meta"><span>อ่าน 6 นาที</span><span>10 พ.ค. 2569</span></div>
+          </div>
+        </a>
+
+        <a class="idx-card" href="choosing-accounting-firm.html" data-tag="Behind">
+          <div class="ic-cover c-mint">
+            <div class="grid" style="background-image:linear-gradient(to right, rgba(27,42,74,.06) 1px, transparent 1px),linear-gradient(to bottom, rgba(27,42,74,.06) 1px, transparent 1px)"></div>
+            <div class="tag">Guide</div>
+            <div class="big">5°</div>
+          </div>
+          <div class="ic-body">
+            <div class="ic-tag">Behind Numerics</div>
+            <h3>เลือกสำนักงานบัญชียังไงให้ไม่ผิดหวัง — 5 คำถามที่คุณต้องถามก่อนเซ็น</h3>
+            <p class="ic-desc">สำนักงานบัญชีไม่ใช่ commodity แบบที่หลายคนคิด — เลือกผิดอาจกระทบธุรกิจเป็นปี เลือกถูกได้ partner ยาวๆ</p>
+            <div class="ic-meta"><span>อ่าน 6 นาที</span><span>08 พ.ค. 2569</span></div>
+          </div>
+        </a>
+
+        <a class="idx-card" href="tax-planning-2569.html" data-tag="Tax">
+          <div class="ic-cover c-navy">
+            <div class="grid"></div>
+            <div class="tag">Tax 2569</div>
+            <div class="big">฿</div>
+          </div>
+          <div class="ic-body">
+            <div class="ic-tag">Tax Planning</div>
+            <h3>ภาษีนิติบุคคล 2569: 5 สิทธิประโยชน์ที่ SME ส่วนใหญ่ลืมใช้</h3>
+            <p class="ic-desc">ลูกค้าใหม่ที่เข้ามาเกือบทุกราย ใช้สิทธิประโยชน์ภาษีไม่ครบ บางคนพลาดเงินคืนปีละ 80,000–250,000 บาท</p>
+            <div class="ic-meta"><span>อ่าน 8 นาที</span><span>02 พ.ค. 2569</span></div>
+          </div>
+        </a>
+
+        <a class="idx-card" href="deductible-expenses.html" data-tag="Tax">
+          <div class="ic-cover c-amber">
+            <div class="grid"></div>
+            <div class="tag">Deductible</div>
+            <div class="big">−%</div>
+          </div>
+          <div class="ic-body">
+            <div class="ic-tag">Tax Planning</div>
+            <h3>ค่าใช้จ่ายอะไรของบริษัทหักภาษีได้บ้าง — กับ 8 จุดที่หักไม่ได้ที่หลายคนไม่รู้</h3>
+            <p class="ic-desc">ใบเสร็จกองหนึ่งไม่ได้แปลว่าหักได้ทุกใบ — เข้าใจหลักเกณฑ์ ภาษีจะถูกต้อง และไม่ถูกปรับย้อนหลัง</p>
+            <div class="ic-meta"><span>อ่าน 7 นาที</span><span>28 เม.ย. 2569</span></div>
+          </div>
+        </a>
+
+        <a class="idx-card" href="behind-numerics.html" data-tag="Behind">
+          <div class="ic-cover c-snow">
+            <div class="grid"></div>
+            <div class="tag">Founder's Note</div>
+            <div class="big">N°</div>
+          </div>
+          <div class="ic-body">
+            <div class="ic-tag">Behind Numerics</div>
+            <h3>ทำไมเราเริ่ม Numerics — บัญชีที่ทำให้ผู้บริหารเข้าใจตัวเลขของตัวเอง</h3>
+            <p class="ic-desc">หลังจาก 18 ปีในงานบัญชีและตรวจสอบ ดิฉันเห็นเรื่องเดียวกันซ้ำๆ ที่กลายเป็นแรงผลักให้ตั้ง Numerics</p>
+            <div class="ic-meta"><span>อ่าน 5 นาที</span><span>22 เม.ย. 2569</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nl">
+  <div class="container">
+    <div class="nl-inner">
+      <div class="nl-eye">Numerics Newsletter</div>
+      <h2>รับบทความใหม่ในกล่องอีเมล เดือนละ 1–2 ฉบับ</h2>
+      <p>สรุปประเด็นบัญชี-ภาษีที่น่าสนใจ ไม่มี spam ไม่มี sales — ยกเลิกได้ทุกเมื่อ</p>
+      <form onsubmit="event.preventDefault(); alert('Demo — เชื่อมระบบ newsletter จริงตอน production');">
+        <input type="email" placeholder="อีเมลของคุณ" required />
+        <button type="submit">สมัครรับ</button>
+      </form>
+      <div class="micro">ใช้แค่ส่งบทความ ไม่ส่งต่อให้บุคคลที่สาม</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand">
+        <a class="logo reversed" href="../index.html">
+          <img class="logo-img logo-img-rev" src="../assets/numerics-logo.png" alt="Numerics Advisory" />
+        </a>
+        <div class="tagline">Beyond Numbers</div>
+        <div class="tagline-th">ตัวเลขที่เข้าใจธุรกิจคุณ</div>
+      </div>
+      <div class="foot-col"><h4>บริการ</h4><ul><li><a href="../services/business-setup.html">Business Setup</a></li><li><a href="../services/bookkeeping.html">ทำบัญชีรายเดือน</a></li><li><a href="../services/audit.html">ตรวจสอบบัญชี</a></li><li><a href="../services/tax-planning.html">วางแผนภาษี</a></li><li><a href="../services/financial-intelligence.html">Financial Intelligence</a></li><li><a href="../services/strategic-advisory.html">Strategic Advisory</a></li><li><a href="../services/health-check.html">Health Check ฟรี</a></li></ul></div>
+      <div class="foot-col"><h4>บริษัท</h4><ul><li><a href="../index.html#about">เกี่ยวกับเรา</a></li><li><a href="index.html">บทความ</a></li></ul></div>
+      <div class="foot-col"><h4>ติดต่อ</h4><ul><li><a href="mailto:achiraya@numericsadvisory.com">achiraya@numericsadvisory.com</a></li><li><a href="tel:+66952249795">+66 95 224 9795</a></li><li><a href="#">LINE: @numerics</a></li><li style="margin-top:6px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.55);font-size:13px;line-height:1.55;font-style:normal">เลขที่ 1 อาคารเอ็มไพร์ ทาวเวอร์<br/>ชั้น 47 ยูนิต 4703 ถนนสาทรใต้<br/>แขวงยานนาวา เขตสาทร<br/>กรุงเทพมหานคร 10120</li></ul></div>
+    </div>
+    <div class="foot-bottom"><div>© 2569 Numerics Advisory Co., Ltd.</div><div class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">PDPA</a></div></div>
+  </div>
+</footer>
+
+<script>
+  // Filter chips
+  const chips = document.querySelectorAll('.idx-chip');
+  const cards = document.querySelectorAll('#article-grid > .idx-card, .idx-feat');
+  chips.forEach(ch => {
+    ch.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      ch.classList.add('active');
+      const filter = ch.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.tag === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
